@@ -1,31 +1,34 @@
-use std::io;
 use rand::Rng;
 use std::cmp::Ordering;
+use std::io;
 
 fn main() {
-    println!("Adivinhe o número!");
+    println!("Bem-vindo ao nosso jogo de adivinações!");
 
     let secret_number = rand::thread_rng().gen_range(1..=100);
 
-    println!("O número secreto é: {secret_number}");
     loop {
-        println!("Digite o seu palpite: ");
+        println!("Digite o seu paupite: ");
 
         let mut guess = String::new();
 
         io::stdin()
-        .read_line(&mut guess).expect("Failed to read line");
+            .read_line(&mut guess)
+            .expect("Failed to read line");
 
-        let guess: u32 = guess.trim().parse().expect("Please type a number!");
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
-        println!("Você digitou: {}", guess);
+        println!("O seu palpite foi: {guess}");
 
         match guess.cmp(&secret_number) {
-            Ordering::Less => println!("Muito pequeno!"),
-            Ordering::Greater => println!("Muito grande!"),
+            Ordering::Less => println!("O número secreto é maior!"),
+            Ordering::Greater => println!("O número secreto é menor!"),
             Ordering::Equal => {
-                println!("Você ganhou!");
-break;
+                println!("Você descobrio o número secreto!");
+                break;
             }
         }
     }
