@@ -79,8 +79,13 @@ E enseguida o comando:
 1.  **Clone o repositório:**
 
     ```bash
-    git clone [https://github.com/dolthub/dolt](https://github.com/dolthub/dolt)
-    cd nome-do-seu-projeto
+    git clone [https://github.com/gabriel1003/guessing_game.git](https://github.com/gabriel1003/guessing_game.git)
+    ```
+    
+    navegue até a pasta do projeto:
+
+    ```bash
+    cd guessing_game
     ```
 
 2.  **Compile e execute o jogo:**
@@ -98,15 +103,3 @@ E enseguida o comando:
 
 * **rand:** Usado para gerar o número secreto aleatório.
 * **cargo:** Usado para construir e gerenciar o projeto Rust.
-
-## Como Contribuir
-
-1.  Faça um fork do repositório.
-2.  Crie uma branch com a sua feature (`git checkout -b feature/minha-feature`).
-3.  Faça commit das suas mudanças (`git commit -am 'Adiciona nova feature'`).
-4.  Faça push para a branch (`git push origin feature/minha-feature`).
-5.  Abra um Pull Request.
-
-## Licença
-
-Este projeto está sob a licença [Nome da sua licença].
